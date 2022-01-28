@@ -14,4 +14,6 @@
 #  updated_at  :datetime         not null
 #
 class Condition < ApplicationRecord
+  enum mental:{great:1, good:2, soso:3, bad:3}
+    
 end

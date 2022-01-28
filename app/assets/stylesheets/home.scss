@@ -1,0 +1,16 @@
+.section {
+  border-top: solid 1px #5989cf;
+  padding: 10px;
+
+  &_title {
+    display: flex;
+
+    &_tag {
+      width: 100px;
+    }
+    
+    &_detail {
+      margin-left: 100px;
+    }
+  }
+}

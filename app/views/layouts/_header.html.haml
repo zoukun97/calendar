@@ -1,7 +1,11 @@
-.header 
-  .prev
-    previous
-  .date
-    2022.1.27
-  .next
-    next
+.header
+  - if current_page?(root_path)
+    %h1 HealthCheck
+  - else
+    %h1 Today's Health
+    -# .prev
+    -#   previous
+    -# .date
+    -#   = @condition.dates
+    -# .next
+    -#   next

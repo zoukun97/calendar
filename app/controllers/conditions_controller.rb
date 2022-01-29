@@ -6,7 +6,7 @@ class ConditionsController < ApplicationController
   def create
     @condition = Condition.new(condition_params)
     if @condition.save
-      redirect_to root_path, notice: "Create today's condition!"
+      redirect_to condition_path, notice: "Create today's condition!"
     else
       flash.now[:error] = 'failed'
       render :new
@@ -18,10 +18,17 @@ class ConditionsController < ApplicationController
   end
 
   def edit
-
+    @condition = Condition.find(params[:id])
   end
 
   def update
+    @condition = Condition.find(params[:id])
+    if @condition.update(condition_params)
+      redirect_to condition_path, notice: "Edit today's condition!"
+    else
+      flash.now[:error] = 'failed'
+      render :edit
+    end
   end
 
   private

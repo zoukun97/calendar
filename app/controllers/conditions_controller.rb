@@ -14,6 +14,7 @@ class ConditionsController < ApplicationController
   end
 
   def show
+    @condition = Condition.find(params[:id])
   end
 
   def edit
@@ -25,6 +26,6 @@ class ConditionsController < ApplicationController
 
   private
     def condition_params
-        params.require(:condition).permit(:mental, :temperature, :weight, :sleep_start, :sleep_end, :exercise, :food)
+        params.require(:condition).permit(:dates, :mental, :temperature, :weight, :sleep_start, :sleep_end, :exercise, :food)
     end
 end

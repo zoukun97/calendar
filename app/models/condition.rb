@@ -15,5 +15,11 @@
 #
 class Condition < ApplicationRecord
   enum mental:{great:1, good:2, soso:3, bad:3}
+
+  validates :dates, presence: true, uniqueness: true
+  validates :mental, presence: true
+  validates :sleep_end, presence: true
+  validates :sleep_start, presence: true
+  validates :temperature, presence: true
     
 end

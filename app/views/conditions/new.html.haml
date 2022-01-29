@@ -5,6 +5,10 @@
 
   = form_with(model: @condition, local: true) do |f|
     %div
+      = f.label :dates, '日付'
+    %div
+      = f.date_select :dates
+    %div
       = f.label :mental, '気分'
     %div
       = f.select :mental, Condition.mentals.keys, { include_blank: '選択して下さい'}, { class: 'text'}

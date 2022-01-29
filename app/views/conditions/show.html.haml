@@ -1,0 +1,40 @@
+.container 
+  Add today's health
+  .section 
+    .section_title
+      .section_title_tag
+        mental
+      .section_title_detail
+        = @condition.mental
+  .section 
+    .section_title
+      .section_title_tag
+        temperature
+      .section_title_detail
+        = @condition.temperature
+  .section 
+    .section_title
+      .section_title_tag
+        sleep
+      .section_title_detail
+        = @condition.sleep_start
+        %p 〜
+        = @condition.sleep_end
+  .section 
+    .section_title
+      .section_title_tag
+        exercise
+      .section_title_detail
+        = @condition.exercise
+  .section 
+    .section_title
+      .section_title_tag
+        food 
+      .section_title_detail
+        = @condition.food 
+  .section 
+    .section_title
+      .section_title_tag
+        weight
+      .section_title_detail
+        = @condition.weight

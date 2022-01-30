@@ -24,9 +24,9 @@
       .section_title_tag
         sleep
       .section_title_detail
-        = @condition.sleep_start
-        %p 〜
-        = @condition.sleep_end
+        = @condition.sleep_start.strftime( "%H:%M" )
+        %span -
+        = @condition.sleep_end.strftime( "%H:%M" )
   .section 
     .section_title
       .section_title_tag

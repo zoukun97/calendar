@@ -1,0 +1,59 @@
+.container
+  .header
+    .prev
+      = link_to 'previous', condition_path(@condition.id - 1)
+    .date
+      = @condition.dates
+    .next
+      = link_to 'next', condition_path(@condition.id + 1) if @condition.id != Date.today
+  = link_to "Edit today's health", edit_condition_path
+  .section 
+    .section_title
+      .section_title_tag
+        .section_title_tag_img
+          = image_tag 'mental.png'
+        mental
+      .section_title_detail
+        = @condition.mental
+  .section 
+    .section_title
+      .section_title_tag
+        .section_title_tag_img
+          = image_tag 'temperature.png'
+        temperature
+      .section_title_detail
+        = @condition.temperature
+  .section 
+    .section_title
+      .section_title_tag
+        .section_title_tag_img
+          = image_tag 'sleeptime.png'
+        sleep
+      .section_title_detail
+        = @condition.sleep_start.strftime( "%H:%M" )
+        %span -
+        = @condition.sleep_end.strftime( "%H:%M" )
+  .section 
+    .section_title
+      .section_title_tag
+        .section_title_tag_img
+          = image_tag 'exercise.png'
+        exercise
+      .section_title_detail
+        = @condition.exercise
+  .section 
+    .section_title
+      .section_title_tag
+        .section_title_tag_img
+          = image_tag 'food.png'
+        food 
+      .section_title_detail
+        = @condition.food 
+  .section 
+    .section_title
+      .section_title_tag
+        .section_title_tag_img
+          = image_tag 'weight.png'
+        weight
+      .section_title_detail
+        = @condition.weight

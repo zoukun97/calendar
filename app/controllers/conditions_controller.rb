@@ -6,7 +6,7 @@ class ConditionsController < ApplicationController
   def create
     @condition = Condition.new(condition_params)
     if @condition.save
-      redirect_to condition_path, notice: "Create today's condition!"
+      redirect_to condition_path(@condition), notice: "Create today's condition!"
     else
       flash.now[:error] = 'failed'
       render :new

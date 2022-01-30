@@ -1,12 +1,12 @@
 .container
   .header
     .prev
-      previous
+      = link_to 'previous', condition_path(@condition.id - 1)
     .date
       = @condition.dates
     .next
-      next
-  Add today's health
+      = link_to 'next', condition_path(@condition.id + 1) if @condition.id != Date.today
+  = link_to "Edit today's health", edit_condition_path
   .section 
     .section_title
       .section_title_tag

@@ -1,7 +1,7 @@
 .header
   - if current_page?(root_path)
     %h1 HealthCheck
-  - else
+  - elsif user_signed_in?
     %h1 Today's Health
     -# .prev
     -#   previous

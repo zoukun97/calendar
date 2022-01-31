@@ -12,10 +12,16 @@
   }
 
   &_title {
+    font-weight: bold;
     margin: auto;
   }
 
   &_right {
     margin-right: 30px;
   }
+}
+
+.body_header {
+  display: flex;
+  justify-content: space-around;
 }

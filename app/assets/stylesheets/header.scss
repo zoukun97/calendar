@@ -1,4 +1,27 @@
 .header {
   display: flex;
+  align-items: center;
+
+  &_left {
+    margin-left: 30px;
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &_title {
+    font-weight: bold;
+    margin: auto;
+  }
+
+  &_right {
+    margin-right: 30px;
+  }
+}
+
+.body_header {
+  display: flex;
   justify-content: space-around;
 }

@@ -1,26 +1,9 @@
-.section {
-  border-top: solid 1px #5989cf;
-  padding: 10px;
+.home_title {
+  text-align: center;
+  margin: auto;
+}
 
-  &_title {
-    display: flex;
-
-    &_tag {
-      width: 100px;
-      display: flex;
-
-      &_img {
-        margin-right: 15px;
-
-        img {
-          height: 25px;
-          width: 25px;
-        }
-      }
-    }
-    
-    &_detail {
-      margin-left: 100px;
-    }
-  }
+.home_link {
+  text-align: center;
+  margin: auto;
 }

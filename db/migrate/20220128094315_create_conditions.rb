@@ -1,7 +1,7 @@
 class CreateConditions < ActiveRecord::Migration[6.1]
   def change
-    create_table :conditions, id: false do |t|
-      t.date :dates, null: false, primary_key: true
+    create_table :conditions do |t|
+      t.date :dates, null: false
       t.integer :mental, null: false
       t.integer :temperature, null: false
       t.datetime :sleep_start, null: false

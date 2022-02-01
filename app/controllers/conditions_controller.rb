@@ -1,10 +1,12 @@
 class ConditionsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    @condition = Condition.new
+    @condition = current_user.conditions.build
   end
 
   def create
-    @condition = Condition.new(condition_params)
+    @condition = current_user.conditions.build(condition_params)
     if @condition.save
       redirect_to condition_path(@condition), notice: "Create today's condition!"
     else
@@ -14,15 +16,15 @@ class ConditionsController < ApplicationController
   end
 
   def show
-    @condition = Condition.find(params[:id])
+    @condition = current_user.conditions.find(params[:id])
   end
 
   def edit
-    @condition = Condition.find(params[:id])
+    @condition = current_user.conditions.find(params[:id])
   end
 
   def update
-    @condition = Condition.find(params[:id])
+    @condition = current_user.conditions.find(params[:id])
     if @condition.update(condition_params)
       redirect_to condition_path, notice: "Edit today's condition!"
     else
@@ -33,6 +35,6 @@ class ConditionsController < ApplicationController
 
   private
     def condition_params
-        params.require(:condition).permit(:dates, :mental, :temperature, :weight, :sleep_start, :sleep_end, :exercise, :food)
+      params.require(:condition).permit(:dates, :mental, :temperature, :weight, :sleep_start, :sleep_end, :exercise, :food)
     end
 end

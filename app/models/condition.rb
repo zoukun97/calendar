@@ -2,7 +2,8 @@
 #
 # Table name: conditions
 #
-#  dates       :date             not null, primary key
+#  id          :bigint           not null, primary key
+#  dates       :date             not null
 #  exercise    :text
 #  food        :text
 #  mental      :integer          not null

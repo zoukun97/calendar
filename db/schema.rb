@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2022_01_31_162445) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "conditions", primary_key: "dates", id: :date, force: :cascade do |t|
+  create_table "conditions", force: :cascade do |t|
+    t.date "dates", null: false
     t.integer "mental", null: false
     t.integer "temperature", null: false
     t.datetime "sleep_start", null: false

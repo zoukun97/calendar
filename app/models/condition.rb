@@ -29,5 +29,9 @@ class Condition < ApplicationRecord
   validates :temperature, presence: true
 
   belongs_to :user
+
+  def to_param
+    dates
+  end
     
 end

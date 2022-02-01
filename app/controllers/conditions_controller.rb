@@ -8,7 +8,7 @@ class ConditionsController < ApplicationController
   def create
     @condition = current_user.conditions.build(condition_params)
     if @condition.save
-      redirect_to condition_path(@condition), notice: "Create today's condition!"
+      redirect_to condition_path(@condition.dates), notice: "Create today's condition!"
     else
       flash.now[:error] = 'failed'
       render :new
@@ -16,17 +16,17 @@ class ConditionsController < ApplicationController
   end
 
   def show
-    @condition = current_user.conditions.find(params[:id])
+    @condition = current_user.conditions.find_by!(dates: params[:dates])
   end
 
   def edit
-    @condition = current_user.conditions.find(params[:id])
+    @condition = current_user.conditions.find_by!(dates: params[:dates])
   end
 
   def update
-    @condition = current_user.conditions.find(params[:id])
+    @condition = current_user.conditions.find_by!(dates: params[:dates])
     if @condition.update(condition_params)
-      redirect_to condition_path, notice: "Edit today's condition!"
+      redirect_to condition_path(@condition.dates), notice: "Edit today's condition!"
     else
       flash.now[:error] = 'failed'
       render :edit

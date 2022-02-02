@@ -1,3 +1,5 @@
+@import './variables'; 
+
 .home_title {
   text-align: center;
   margin: auto;
@@ -5,5 +7,29 @@
 
 .home_link {
   text-align: center;
-  margin: auto;
+  margin: 5px;
+}
+
+.link {
+  background-color: rgb(99, 192, 224);
+  padding: 7px 5px;
+  border-radius: 30%;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  color: white;
+}
+
+.home_subtitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.condition{
+  text-align: center;
+  margin: 20px 0 20px 0;
+
+  &_link {
+    padding: 7px;
+    border-radius: 10%;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  }
 }

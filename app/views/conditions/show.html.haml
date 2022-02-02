@@ -6,7 +6,8 @@
       = @condition.dates
     .next
       = link_to 'next', condition_path(@condition.dates + 1) if @condition.dates != Date.today
-  = link_to "Edit today's health", edit_condition_path
+  .edit
+    = link_to "Edit today's health", edit_condition_path, class: 'link'
   .section 
     .section_title
       .section_title_tag

@@ -1,0 +1,8 @@
+.container 
+  .home_title
+    %p コンディションを入力しよう！
+  .home_link
+    = link_to "Add Today's Condition", new_condition_path
+  - @conditions.each do |condition|
+    .condition
+      = link_to condition.dates, condition_path(condition.dates)

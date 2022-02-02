@@ -19,6 +19,10 @@ class ConditionsController < ApplicationController
     @condition = current_user.conditions.find_by!(dates: params[:dates])
   end
 
+  def index
+    @conditions = current_user.conditions.order(dates: :desc)
+  end
+
   def edit
     @condition = current_user.conditions.find_by!(dates: params[:dates])
   end

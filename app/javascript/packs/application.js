@@ -12,6 +12,14 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import $ from 'jquery'
+import axios from 'axios'
+
 document.addEventListener('turbolinks:load', () => {
-  window.alert('aaa')
+  $('.home_subtitle').on('click', () => {
+    axios.get('/')
+      .then((response) => {
+        console.log(response)
+      })
+  })
 })

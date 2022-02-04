@@ -5,6 +5,7 @@
     = link_to "Add Today's Condition", new_condition_path, class: 'link'
   .home_subtitle
     %p これまでのコンディション
-  - @conditions.each do |condition|
-    .condition
-      = link_to condition.dates, condition_path(condition.dates), class: 'condition_link'
+  .hidden.conditions
+    - @conditions.each do |condition|
+      .condition
+        = link_to condition.dates, condition_path(condition.dates), class: 'condition_link'

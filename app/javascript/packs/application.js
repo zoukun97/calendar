@@ -11,3 +11,12 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import $ from 'jquery'
+import axios from 'axios'
+
+document.addEventListener('turbolinks:load', () => {
+  $('.home_subtitle').on('click', () => {
+    $('.conditions').removeClass('hidden')
+  })
+})

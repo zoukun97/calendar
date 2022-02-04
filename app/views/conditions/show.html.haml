@@ -58,3 +58,10 @@
         weight
       .section_title_detail
         = @condition.weight
+
+  .home_subtitle
+    %p これまでのコンディション
+  .hidden.conditions
+    - @conditions.each do |condition|
+      .condition
+        = link_to condition.dates, condition_path(condition.dates), class: 'condition_link'

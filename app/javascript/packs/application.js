@@ -17,9 +17,6 @@ import axios from 'axios'
 
 document.addEventListener('turbolinks:load', () => {
   $('.home_subtitle').on('click', () => {
-    axios.get('/')
-      .then((response) => {
-        console.log(response)
-      })
+    $('.conditions').removeClass('hidden')
   })
 })

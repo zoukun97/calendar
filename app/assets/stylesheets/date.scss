@@ -1,3 +1,9 @@
+@import './variables';
+
+.body_header {
+  font-size: 20px;
+}
+
 .edit {
   margin: 20px;
 }
@@ -9,6 +15,11 @@
   margin-left: auto;
   margin-right: auto;
 
+  @include mq(sm) {
+    width: 100%;
+    
+  }
+
   &_title {
     display: flex;
     font-size: 20px;
@@ -17,7 +28,10 @@
       width: 50%;
       display: flex;
       justify-content: center;
-      // align-items: center;
+
+      @include mq(sm) {
+        justify-content: left;
+      }
         
       img {
         height: 30px;

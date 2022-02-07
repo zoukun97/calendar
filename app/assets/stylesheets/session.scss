@@ -1,7 +1,13 @@
+@import './variables';
+
 .wrapper {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+
+  @include mq(sm) {
+    width: 100%;
+  }
 }
 
 input, select {

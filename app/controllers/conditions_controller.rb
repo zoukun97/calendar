@@ -22,6 +22,7 @@ class ConditionsController < ApplicationController
 
   def index
     @conditions = current_user.conditions.order(dates: :desc)
+    @user = current_user.level
   end
 
   def edit

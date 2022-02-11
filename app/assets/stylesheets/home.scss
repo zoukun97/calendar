@@ -1,5 +1,14 @@
 @import './variables'; 
 
+.level {
+  margin-left: 20px;
+  font-size: 20px;
+  display: inline;
+  background-color: rgb(99, 192, 224);
+  padding: 5px;
+  border-radius: 10%;
+}
+
 .home_title {
   text-align: center;
   margin: auto;
@@ -14,7 +23,7 @@
   background-color: rgb(99, 192, 224);
   padding: 7px 5px;
   border-radius: 30%;
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  box-shadow: 10px 10px 10px rgba(216, 132, 132, 0.4);
   color: white;
 }
 

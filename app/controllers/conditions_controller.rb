@@ -51,11 +51,12 @@ class ConditionsController < ApplicationController
     end
 
     def level_up
-      # condition = current_user.conditions.find_by!(dates: params[:dates])
-      condition_length = @condition.find_by(dates: params[:dates])
-      level = Level.find_by(level: current_user.level + 1)
-      if condition_length == level.thresold
-        current_user.update(level: level.level)
+      point = current_user.point
+      new_point = point + 1
+      current_user.update!(point: new_point)
+      level = Level.find_by!(level: current_user.level + 1)
+      if new_point == level.thresold
+        current_user.update!(level: level.level)
       end
     end
 end

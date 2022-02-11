@@ -9,10 +9,7 @@ class ConditionsController < ApplicationController
     @condition = current_user.conditions.build(condition_params)
     if @condition.save
       redirect_to condition_path(@condition.dates), notice: "Create today's condition!"
-      if three_days
-        level = current_user.level += 1
-        current_user.update(level: level)
-      end
+      level_up
     else
       flash.now[:error] = 'failed'
       render :new
@@ -51,5 +48,14 @@ class ConditionsController < ApplicationController
     def three_days
       today = Date.today
       current_user.conditions.exists?(dates: today) && current_user.conditions.exists?(dates: today - 1) && current_user.conditions.exists?(dates: today - 2)
+    end
+
+    def level_up
+      # condition = current_user.conditions.find_by!(dates: params[:dates])
+      condition_length = @condition.find_by(dates: params[:dates])
+      level = Level.find_by(level: current_user.level + 1)
+      if condition_length == level.thresold
+        current_user.update(level: level.level)
+      end
     end
 end

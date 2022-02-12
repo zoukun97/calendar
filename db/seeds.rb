@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# Levelsモデルにレベルと閾値のデータ作成
+levels = (1..73).map {|n| n }
+
+numbers = (1..365).map { |n| n }
+thresolds = numbers.select{ |n| n % 5 == 0 }
+
+levels.zip(thresolds) do |level, thresold|
+  Level.create(level: level, thresold: thresold)
+end

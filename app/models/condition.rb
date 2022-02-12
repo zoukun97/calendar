@@ -33,5 +33,4 @@ class Condition < ApplicationRecord
   def to_param
     dates
   end
-    
 end

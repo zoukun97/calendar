@@ -8,7 +8,7 @@ RSpec.describe Condition, type: :model do
         password: 'password'
       })
     end
-      
+
     let(:condition) do
       user.conditions.build({
         dates: Date.today,
@@ -18,7 +18,7 @@ RSpec.describe Condition, type: :model do
         temperature: 36.5
       })
     end
-      
+
     it '記事を保存できる' do
       expect(condition).to be_valid
     end

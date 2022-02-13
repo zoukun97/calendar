@@ -2,12 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Condition, type: :model do
   context 'dates,mental,sleep_start,sleep_end,temperatureが入力されている場合' do
-    let(:user) do
-      User.create!({
-        email: 'test@example.com',
-        password: 'password'
-      })
-    end
+    let!(:user) { create(:user) }
 
     let(:condition) do
       user.conditions.build({

@@ -25,6 +25,7 @@ RSpec.describe 'Conditions', type: :request do
         expect(response).to have_http_status(:success)
         expect(Condition.last.dates).to eq(condition_params[:dates])
         expect(Condition.last.mental).to eq(condition_params[:mental])
+        expect(Condition.last.temperature).to eq(condition_params[:temperature])
       end
 
     end

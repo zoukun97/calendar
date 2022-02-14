@@ -9,7 +9,7 @@
 #  mental      :integer          not null
 #  sleep_end   :datetime         not null
 #  sleep_start :datetime         not null
-#  temperature :integer          not null
+#  temperature :float            not null
 #  weight      :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

@@ -14,4 +14,20 @@ RSpec.describe 'Condition', type: :system do
       expect(page).to have_content 'コンディションを入力しよう！'
     end
   end
+
+  context 'これまでのコンディションをクリックした場合' do
+    before do
+      sign_in user
+    end
+
+    it 'conditionが表示される' do
+      visit root_path
+      find('.home_subtitle').click
+      expect(page).to have_css('.condition', text: condition.dates)
+      expect(page).to have_css('.condition', text: condition.mental)
+      expect(page).to have_css('.condition', text: condition.sleep_start.strftime( "%H:%M" ))
+      expect(page).to have_css('.condition', text: condition.sleep_end.strftime( "%H:%M" ))
+      expect(page).to have_css('.condition', text: condition.temperature)
+    end
+  end
 end

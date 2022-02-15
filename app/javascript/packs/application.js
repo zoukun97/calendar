@@ -16,7 +16,7 @@ import $ from 'jquery'
 import axios from 'axios'
 
 document.addEventListener('turbolinks:load', () => {
-  $('.home_subtitle').on('click', () => {
+  $('.sub').on('click', () => {
     $('.conditions').removeClass('hidden')
   })
 })

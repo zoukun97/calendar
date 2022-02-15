@@ -6,7 +6,7 @@
   .home_link
     = link_to "コンディションを入力する", new_condition_path, class: 'link'
   .home_subtitle
-    %p これまでのコンディション
+    %p.sub これまでのコンディション
   .hidden.conditions
     - @conditions.each do |condition|
       .condition

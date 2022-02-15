@@ -22,7 +22,7 @@ RSpec.describe 'Condition', type: :system do
 
     it 'conditionが表示される' do
       visit root_path
-      find('.home_subtitle').click
+      find('.sub').click
       expect(page).to have_css('.condition', text: condition.dates)
       expect(page).to have_css('.condition', text: condition.mental)
       expect(page).to have_css('.condition', text: condition.sleep_start.strftime( "%H:%M" ))

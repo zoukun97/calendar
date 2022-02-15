@@ -47,4 +47,18 @@ RSpec.describe 'Condition', type: :system do
       expect(page).to have_css('.section', text: condition.temperature)
     end
   end
+
+  context 'コンディションを入力するをクリックした場合' do
+    before do
+      sign_in user
+    end
+
+    it 'conditions/newページに遷移する' do
+      visit root_path
+      click_on 'コンディションを入力する'
+      expect(page).to have_content '日付'
+      expect(page).to have_content '気分'
+      expect(page).to have_content '体重'
+    end
+  end
 end

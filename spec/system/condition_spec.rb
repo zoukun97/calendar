@@ -30,4 +30,21 @@ RSpec.describe 'Condition', type: :system do
       expect(page).to have_css('.condition', text: condition.temperature)
     end
   end
+
+  context '.condition_linkをクリックした場合' do
+    before do
+      sign_in user
+    end
+
+    it '日付詳細に遷移する' do
+      visit root_path
+      find('.home_subtitle').click
+      click_on condition.dates
+      expect(page).to have_css('.body_header', text: condition.dates)
+      expect(page).to have_css('.section', text: condition.mental)
+      expect(page).to have_css('.section', text: condition.sleep_start.strftime( "%H:%M" ))
+      expect(page).to have_css('.section', text: condition.sleep_end.strftime( "%H:%M" ))
+      expect(page).to have_css('.section', text: condition.temperature)
+    end
+  end
 end

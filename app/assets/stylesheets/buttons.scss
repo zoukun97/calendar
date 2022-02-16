@@ -19,3 +19,18 @@
   padding: 16px 0;
   font-weight: bold;
   }
+
+  .logout_btn {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: $primary-color;
+    border: solid 2px $primary-color;
+    border-radius: 3px;
+    transition: .4s;
+  }
+
+  .logout_btn:hover {
+    background: $primary-color;
+    color: white;
+  }

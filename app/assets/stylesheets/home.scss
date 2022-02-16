@@ -4,7 +4,7 @@
   margin-left: 20px;
   font-size: 20px;
   display: inline;
-  background-color: rgb(99, 192, 224);
+  background-color: $primary-color;
   padding: 5px;
   border-radius: 10%;
   color: white;
@@ -21,11 +21,20 @@
 }
 
 .link {
-  background-color: rgb(99, 192, 224);
-  padding: 7px 5px;
-  border-radius: 30%;
-  box-shadow: 10px 10px 10px rgba(216, 132, 132, 0.4);
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: $primary-color;
   color: white;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.link:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
 }
 
 .home_subtitle {

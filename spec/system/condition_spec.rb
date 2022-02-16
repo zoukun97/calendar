@@ -6,11 +6,13 @@ RSpec.describe 'Condition', type: :system do
 
   describe 'Login' do
     context 'ログインした場合' do
-      it 'ホームページを表示する' do
+      before do
         visit root_path
         fill_in 'Eメール', with: 'test@example.com'
         fill_in 'パスワード', with: 'password'
         click_on 'Log in'
+      end
+      it 'ホームページを表示する' do
         expect(page).to have_content 'ログインしました'
         expect(page).to have_content 'コンディションを入力しよう！'
       end
@@ -23,9 +25,11 @@ RSpec.describe 'Condition', type: :system do
     end
 
     context 'これまでのコンディションをクリックした場合' do
-      it 'conditionが表示される' do
+      before do
         visit root_path
         find('.sub').click
+      end
+      it 'conditionが表示される' do
         expect(page).to have_css('.condition', text: condition.dates)
         expect(page).to have_css('.condition', text: condition.mental)
         expect(page).to have_css('.condition', text: condition.sleep_start.strftime( "%H:%M" ))
@@ -35,10 +39,12 @@ RSpec.describe 'Condition', type: :system do
     end
 
     context '.condition_linkをクリックした場合' do
-      it '日付詳細に遷移する' do
+      before do
         visit root_path
         find('.home_subtitle').click
         click_on condition.dates
+      end
+      it '日付詳細に遷移する' do
         expect(page).to have_css('.body_header', text: condition.dates)
         expect(page).to have_css('.section', text: condition.mental)
         expect(page).to have_css('.section', text: condition.sleep_start.strftime( "%H:%M" ))
@@ -48,9 +54,11 @@ RSpec.describe 'Condition', type: :system do
     end
 
     context 'コンディションを入力するをクリックした場合' do
-      it 'conditions/newページに遷移する' do
+      before do
         visit root_path
         click_on 'コンディションを入力する'
+      end
+      it 'conditions/newページに遷移する' do
         expect(page).to have_content '日付'
         expect(page).to have_content '気分'
         expect(page).to have_content '体重'

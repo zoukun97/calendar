@@ -20,5 +20,10 @@ module Calendar
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
+
+    if Rails.env.development? || Rails.env.test?
+      Bundler.require(*Rails.groups)
+      Dotenv::Railtie.load
+    end
   end
 end

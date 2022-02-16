@@ -1,0 +1,16 @@
+{
+  "name": "calendar",
+  "description": "This is calendar",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/zoukun97/calendar",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}

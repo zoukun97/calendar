@@ -26,6 +26,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'hamlit'
 gem 'devise'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'dotenv-rails'
 end
 
 group :development do

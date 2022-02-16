@@ -21,7 +21,9 @@ module Calendar
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
 
-    Bundler.require(*Rails.groups)
-    Dotenv::Railtie.load
+    if Rails.env.development? || Rails.env.test?
+      Bundler.require(*Rails.groups)
+      Dotenv::Railtie.load
+    end
   end
 end

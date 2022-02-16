@@ -56,7 +56,7 @@ RSpec.describe 'Condition', type: :system do
     context 'コンディションを入力するをクリックした場合' do
       before do
         visit root_path
-        click_on 'コンディションを入力する'
+        click_on 'コンディションを入力'
       end
       it 'conditions/newページに遷移する' do
         expect(page).to have_content '日付'

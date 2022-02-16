@@ -4,7 +4,7 @@
   margin-left: 20px;
   font-size: 20px;
   display: inline;
-  background-color: #668ad8;
+  background-color: $primary-color;
   padding: 5px;
   border-radius: 10%;
   color: white;
@@ -24,7 +24,7 @@
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #668ad8;
+  background: $primary-color;
   color: white;
   border-bottom: solid 4px #627295;
   border-radius: 3px;

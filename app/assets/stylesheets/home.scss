@@ -7,7 +7,10 @@
   background-color: $primary-color;
   padding: 5px;
   border-radius: 10%;
-  color: white;
+
+  a {
+    color: white;
+  }
 }
 
 .home_title {

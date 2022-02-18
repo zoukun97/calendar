@@ -1,6 +1,6 @@
 .container 
   .level 
-    = "Lv.#{@user_level}"
+    = link_to "Lv.#{@user_level}", profile_path
   .home_title
     %p コンディションを入力しよう！
     %p 「コンディションを入力」から今日のコンディションを記録できます。

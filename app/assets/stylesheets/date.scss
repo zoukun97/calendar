@@ -2,6 +2,25 @@
 
 .body_header {
   font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.prev {
+  font-size: 18px;
+
+  @include mq(sm) {
+    font-size: 15px; 
+  }
+}
+
+.next {
+  font-size: 18px;
+
+  @include mq(sm) {
+    font-size: 15px; 
+  }
 }
 
 .edit {

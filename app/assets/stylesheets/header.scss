@@ -1,3 +1,5 @@
+@import './variables'; 
+
 .header {
   display: flex;
   align-items: center;
@@ -14,14 +16,18 @@
   &_title {
     font-weight: bold;
     margin: auto;
+    font-size: 23px;
+
+    @include mq(sm) {
+      font-size: 20px;
+    }
   }
 
   &_right {
     margin-right: 30px;
-  }
-}
 
-.body_header {
-  display: flex;
-  justify-content: space-around;
+    @include mq(sm) {
+      margin-right: 0;
+    }
+  }
 }

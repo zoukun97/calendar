@@ -17,6 +17,6 @@ import axios from 'axios'
 
 document.addEventListener('turbolinks:load', () => {
   $('.sub').on('click', () => {
-    $('.conditions').removeClass('hidden')
+    $('.conditions').toggle()
   })
 })

@@ -1,16 +1,17 @@
 .container 
   .level 
-    = "Lv.#{@user_level}"
+    = link_to "Lv.#{@user_level}", profile_path
   .home_title
     %p コンディションを入力しよう！
     %p 「コンディションを入力」から今日のコンディションを記録できます。
-    %p 5日入力するごとにレベルが上がっていきます。
+    %p 5日入力するごとにレベルが上がります。
     %p 最大Lv.73 1年続ければ達成できます。
     %p 毎日続けましょう！
   .home_link
     = link_to "コンディションを入力", new_condition_path, class: 'link'
-  .home_subtitle
-    %p.sub これまでのコンディションを表示
+  - if @conditions.exists?
+    .home_subtitle
+      %p.sub これまでのコンディションを表示
   .hidden.conditions
     - @conditions.each do |condition|
       .condition

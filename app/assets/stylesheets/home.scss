@@ -16,11 +16,18 @@
 .home_title {
   text-align: center;
   margin: auto;
+  font-size: 20px;
+
+  @include mq(sm) {
+    margin: 20px;
+    font-size: 18px;
+  }
 }
 
 .home_link {
   text-align: center;
-  margin: 5px;
+  margin: 10px;
+  font-size: 18px;
 }
 
 .link {

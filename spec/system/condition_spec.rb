@@ -38,6 +38,21 @@ RSpec.describe 'Condition', type: :system do
       end
     end
 
+    context 'これまでのコンディションをクリックした場合' do
+      before do
+        visit root_path
+        find('.sub').click
+        find('.sub').click
+      end
+      it 'conditionが非表示になる' do
+        expect(page).not_to have_css('.condition', text: condition.dates)
+        expect(page).not_to have_css('.condition', text: condition.mental)
+        expect(page).not_to have_css('.condition', text: condition.sleep_start.strftime( "%H:%M" ))
+        expect(page).not_to have_css('.condition', text: condition.sleep_end.strftime( "%H:%M" ))
+        expect(page).not_to have_css('.condition', text: condition.temperature)
+      end
+    end
+
     context '.condition_linkをクリックした場合' do
       before do
         visit root_path

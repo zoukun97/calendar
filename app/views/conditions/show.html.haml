@@ -1,11 +1,11 @@
 .container
   .body_header
     .prev
-      = link_to 'previous', condition_path(@condition.dates - 1)
+      = link_to 'previous', condition_path(@condition.dates - 1) if current_user.conditions.exists?(dates: @condition.dates - 1)
     .date
       = @condition.dates
     .next
-      = link_to 'next', condition_path(@condition.dates + 1) if @condition.dates != Date.today
+      = link_to 'next', condition_path(@condition.dates + 1) if current_user.conditions.exists?(dates: @condition.dates + 1)
   .edit
     = link_to "Edit", edit_condition_path, class: 'link'
   .section 

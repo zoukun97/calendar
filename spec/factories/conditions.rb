@@ -6,10 +6,10 @@
 #  dates       :date             not null
 #  exercise    :text
 #  food        :text
-#  mental      :integer          not null
-#  sleep_end   :datetime         not null
-#  sleep_start :datetime         not null
-#  temperature :float            not null
+#  mental      :integer
+#  sleep_end   :datetime
+#  sleep_start :datetime
+#  temperature :float
 #  weight      :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

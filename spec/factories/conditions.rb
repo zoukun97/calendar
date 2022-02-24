@@ -21,7 +21,7 @@
 #
 FactoryBot.define do
   factory :condition do
-    dates { Date.today }
+    dates { Date.today+1 }
     mental { 'good' }
     sleep_start { DateTime.now }
     sleep_end { DateTime.now }

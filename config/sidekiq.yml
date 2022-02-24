@@ -1,0 +1,4 @@
+:schedule:
+  date:
+    cron: '0 0 * * *'
+    class: DateJob

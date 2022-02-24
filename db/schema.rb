@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_14_012521) do
+ActiveRecord::Schema.define(version: 2022_02_23_110305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "conditions", force: :cascade do |t|
     t.date "dates", null: false
-    t.integer "mental", null: false
-    t.float "temperature", null: false
-    t.datetime "sleep_start", null: false
-    t.datetime "sleep_end", null: false
+    t.integer "mental"
+    t.float "temperature"
+    t.datetime "sleep_start"
+    t.datetime "sleep_end"
     t.integer "weight"
     t.text "exercise"
     t.text "food"
@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(version: 2022_02_14_012521) do
     t.integer "point", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "years", primary_key: "day", id: :date, force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

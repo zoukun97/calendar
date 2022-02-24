@@ -25,4 +25,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :conditions, dependent: :destroy
+
+  after_create :today_condition_create
+
+  private
+    def today_condition_create
+      User.last.conditions.create(dates: Date.today)
+    end
 end

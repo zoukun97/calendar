@@ -38,9 +38,9 @@
                   = image_tag 'sleeptime.png'
                   %p sleep
                 .section_title_detail
-                  = condition.sleep_start.strftime( "%H:%M" )
+                  = condition.sleep_start.strftime( "%H:%M" ) unless condition.sleep_start.nil?
                   %span -
-                  = condition.sleep_end.strftime( "%H:%M" )
+                  = condition.sleep_end.strftime( "%H:%M" ) unless condition.sleep_end.nil?
             .section 
               .section_title
                 .section_title_tag

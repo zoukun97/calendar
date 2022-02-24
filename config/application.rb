@@ -20,6 +20,7 @@ module Calendar
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
+    config.active_job.queue_adapter = :sidekiq
 
     if Rails.env.development? || Rails.env.test?
       Bundler.require(*Rails.groups)

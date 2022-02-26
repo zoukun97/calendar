@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(version: 2022_02_23_110305) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
- 
+  create_table "years", primary_key: "day", id: :date, force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

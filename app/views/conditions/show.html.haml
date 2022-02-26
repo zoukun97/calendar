@@ -7,7 +7,7 @@
     .next
       = link_to 'next', condition_path(@condition.dates + 1) if current_user.conditions.exists?(dates: @condition.dates + 1)
   .edit
-    = link_to "Edit", edit_condition_path, class: 'link'
+    = link_to "Add", edit_condition_path, class: 'link'
   .section 
     .section_title
       .section_title_tag

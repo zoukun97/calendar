@@ -8,7 +8,7 @@ class ConditionsController < ApplicationController
   def create
     @condition = current_user.conditions.build(condition_params)
     if @condition.save
-      redirect_to condition_path(@condition.dates), notice: "Create today's condition!"
+      redirect_to condition_path(@condition.dates), notice: "コンディションを追加しました!"
       level_up
     else
       flash.now[:error] = 'failed'
@@ -33,7 +33,7 @@ class ConditionsController < ApplicationController
   def update
     @condition = current_user.conditions.find_by!(dates: params[:dates])
     if @condition.update(condition_params)
-      redirect_to condition_path(@condition.dates), notice: "Edit today's condition!"
+      redirect_to condition_path(@condition.dates), notice: "コンディションを追加しました!"
     else
       flash.now[:error] = 'failed'
       render :edit

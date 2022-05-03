@@ -2,10 +2,10 @@
   .level 
     = link_to "Lv.#{@user_level}", profile_path
   .home_title
-    %p コンディションを入力しよう！
-    %p 「コンディションを入力」から今日のコンディションを記録できます。
-    %p 毎日続けましょう！
-  .home_link  
+    %p 「コンディションを入力」から本日のコンディションを記録できます。
+    %p 5日間入力するごとにレベルアップし、左に表示されます。
+    %p 毎日忘れずに入力して、日々の体の状態を管理しましょう！
+  .home_link
     = link_to "コンディションを入力", new_condition_path, class: 'link'
   - if @conditions.exists?
     .home_subtitle

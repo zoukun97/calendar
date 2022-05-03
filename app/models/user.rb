@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   has_many :conditions, dependent: :destroy
 
-  after_create :today_condition_create
+  # after_create :today_condition_create
 
   private
     def today_condition_create
